@@ -28,6 +28,12 @@ const bobafett = {
   forcePoints: 0
 };
 
+const darthvader = {
+  name: "Darth Vader",
+  role: "Sith Lord",
+  age: 45,
+  forcePoints: 1800
+};
 // Create one more data entry for the character Obi Wan Kenobi.
 // Enter any values you like for the parameters following the same format as the Yoda and Darth Maul character
 //
@@ -59,10 +65,14 @@ app.get("/darthmaul", function(req, res) {
 app.get("/bobafett", function(req, res) {
   res.json(bobafett);
 });
+
+app.get("/darthvader", function(req, res) {
+  res.json(darthvader);
+});
 //
 
 // Listener
 // ===========================================================
 app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+  console.log("App listening at http://localhost:" + PORT);
 });

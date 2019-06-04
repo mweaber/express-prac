@@ -37,6 +37,11 @@ app.get("/", function(req, res) {
 // What does this route do?
 // ANSWER: I believe this will make a route on /api/characters that will return the characters object.
 // The return stops the function. 
+
+// You would set up routes this way to help reduce amount of code but also with scalability. 
+// If you have one route that gets all the items from the array and returns them it makes no difference on the size of 
+// that array. Using this example will help to keep my code DRY but also help when the data being returned is much larger.
+
 app.get("/api/characters", function(req, res) {
   return res.json(characters);
 });

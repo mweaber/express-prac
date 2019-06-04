@@ -28,6 +28,10 @@ function handleExpress(req, res) {
         case "/portfolio":
             return displayPortfolio(path, req, res);
         
+        // Contact Route 
+        case "/contact":
+            return displayContact(path, req, res);
+        
         // Default to 404 page
         default: 
             return display404(path, req, res);
@@ -41,6 +45,7 @@ function displayRoot(url, req, res) {
     const myHTML = "<html>" + 
     "<body><h1>Home Page</h1>" +
     "<a href='/portfolio'>Portfolio</a>" + 
+    "<a href='/contact'>Contact</a>" +
     "</body></html>";
 
     // Configuring the response from server (200) all ok.
@@ -56,6 +61,22 @@ function displayPortfolio(url, req, res) {
     const myHTML = "<html>" + 
     "<body><h1>Home Page</h1>" +
     "<a href='/'>Go Home</a>" + 
+    "</body></html>";
+
+    // Configuring the response from server (200) all ok.
+    res.writeHead(200, { "Content-Type": "text/html" });
+
+    // End the response by sending the myHTML code to the client.
+    res.end(myHTML);
+}
+
+// When someone visit http://localhost8080/contact path, this will be the funciton that runs 
+// and what will end up displaying to the client.
+function displayContact(url, req, res) {
+    const myHTML = "<html>" + 
+    "<body><h1>Home Page</h1>" +
+    "<a href='/'>Go Home</a>" + 
+    "<a href='/contact'>Contact Me</a>" + 
     "</body></html>";
 
     // Configuring the response from server (200) all ok.
